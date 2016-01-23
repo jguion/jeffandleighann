@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>Jeff and Leighann's Wedding!</title>
+	<link rel="shortcut icon" href="images\heart.gif">
+	<link href="jquery-ui.css" rel="stylesheet">
+	<style>
+	body{
+		background: lightblue;
+		font: 62.5% "Trebuchet MS", sans-serif;
+		margin: 10px;
+	}
+	.demoHeaders {
+		margin-top: 2em;
+	}
+	#dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+	#icons {
+		margin: 0;
+		padding: 0;
+	}
+	#icons li {
+		margin: 2px;
+		position: relative;
+		padding: 4px 0;
+		cursor: pointer;
+		float: left;
+		list-style: none;
+	}
+	#icons span.ui-icon {
+		float: left;
+		margin: 0 4px;
+	}
+	.fakewindowcontain .ui-widget-overlay {
+		position: absolute;
+	}
+	select {
+		width: 200px;
+	}
+	#tabs{
+		background: whitesmoke;
+	}
+	#cover-image-holder{
+		width: 100%;
+		height: 100%;
+		text-align: center;
+	}
+	#cover-image{
+		width: 700px;
+		height: 100%;
+	}
+	#JLlogo{
+		float:right;
+	}
+	#wedding-details{
+		text-align: center;
+	}
+	h1{
+		color:#f88379;
+	}
+	h2{
+		color:#3366ff;
+	}
+	</style>
+</head>
+<body>
+<!-- Tabs -->
+<!-- <h1 class="demoHeaders">Jeff and Leighann's Wedding</h1> -->
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">Our Wedding</a></li>
+		<li><a href="#tabs-2">Details</a></li>
+		<li><a href="#tabs-3">Photos</a></li>
+		<li><a href="#tabs-4">Registry</a></li>
+		<img id="JLlogo" src="images/J+L_logo.png"></img>
+	</ul>
+	<div id="tabs-1">
+		<div id="cover-image-holder">
+			<img id="cover-image" src="images/engagement_pic_2.jpg"></img>
+		</div>
+		<div id="wedding-details">
+			<h1>Jeff and Leighann</h1>
+			<h2>September 17, 2016</h2>
+			<div id="wedding_countdown"></div>
+		</div>
+	</div>
+	<div id="tabs-2">
+		<p>Check back for details</p>
+		<!--
+		<h1>Wedding</h1>
+		<h2>4:00 PM, Plainville Congregational Church</h2>
+		<br/>
+		<h1>Reception</h1>
+		<h2>7:00 PM, St. Clemente Castle, Portland, CT</h2>
+	-->
+	</div>
+	<div id="tabs-3">Come back after the Wedding to see the Photos!</div>
+	<div id="tabs-4">
+		<h1>Registry</h1>
+		<p>Check back to see links to Registry</p>
+	</div>
+</div>
+
+
+
+<script src="external/jquery/jquery.js"></script>
+<script src="external/jquery.countdown-2.1.0/jquery.countdown.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+	$( "#tabs" ).tabs();
+
+		
+	$("#wedding_countdown").countdown("2016/09/17", function(event) {
+		$(this).text(event.strftime('%D days %H hours %M minutes %S seconds') + " until the Wedding!");
+8   });
+
+</script>
+</body>
+</html>
