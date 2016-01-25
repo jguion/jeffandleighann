@@ -5,9 +5,12 @@
 	<title>Jeff and Leighann's Wedding!</title>
 	<link rel="shortcut icon" href="images\heart.gif">
 	<link href="jquery-ui.css" rel="stylesheet">
+	<!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">-->
+
 	<style>
 	body{
-		background: lightblue;
+		background: white;
+		display: block;
 		font: 62.5% "Trebuchet MS", sans-serif;
 		margin: 10px;
 	}
@@ -49,7 +52,18 @@
 		width: 200px;
 	}
 	#tabs{
-		background: whitesmoke;
+		background: white;
+    height: 100%;
+    width: 100%;
+	}
+	#header{
+		background: white;
+		position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 66px;
+    width: 100%;
+    z-index: 999;
 	}
 	#cover-image-holder{
 		width: 100%;
@@ -66,47 +80,76 @@
 	#wedding-details{
 		text-align: center;
 	}
+	#header_bg{
+		background: url("images/nav3.png") no-repeat scroll center bottom transparent;
+    position: fixed;
+    top: 5px;
+    left: 0px;
+    height: 138px;
+    width: 100%;
+	}
+	#tabs_ul{
+		height: 44px;
+		box-shadow: 0px 1px 0px rgba(160, 158, 158, 0.16);
+
+	}
+	.right{
+		float:right !important;
+	}
+	.tabs{
+		border:1px solid #020202;
+		margin: 55px 10%;
+	}
 	h1{
 		color:#f88379;
 	}
 	h2{
-		color:#3366ff;
+		color:black;
 	}
+	:focus {outline:none;}
 	</style>
 </head>
 <body>
 <!-- Tabs -->
 <!-- <h1 class="demoHeaders">Jeff and Leighann's Wedding</h1> -->
 <div id="tabs">
-	<ul>
+	<div id="header">
+	<div id="header_bg">
+	</div>
+	<ul id="tabs_ul">
 		<li><a href="#tabs-1">Our Wedding</a></li>
 		<li><a href="#tabs-2">Details</a></li>
-		<li><a href="#tabs-3">Photos</a></li>
-		<li><a href="#tabs-4">Registry</a></li>
-		<img id="JLlogo" src="images/J+L_logo.png"></img>
+		<li><a href="#tabs-3">Hotel</a></li>
+		<li class="right"><a href="#tabs-4">Photos</a></li>
+		<li class="right"><a href="#tabs-5">Registry</a></li>
+		<!--<img id="JLlogo" src="images/J+L_logo.png"></img>-->
 	</ul>
-	<div id="tabs-1">
+	</div>
+	<div id="tabs-1" class="tabs">
 		<div id="cover-image-holder">
-			<img id="cover-image" src="images/engagement_pic_2.jpg"></img>
+			<img id="cover-image" src="images/ep1.jpg"></img>
 		</div>
 		<div id="wedding-details">
-			<h1>Jeff and Leighann</h1>
-			<h2>September 17, 2016</h2>
-			<div id="wedding_countdown"></div>
+			<h2 id="wedding_countdown"></h2>
 		</div>
 	</div>
-	<div id="tabs-2">
-		<p>Check back for details</p>
-		<!--
-		<h1>Wedding</h1>
-		<h2>4:00 PM, Plainville Congregational Church</h2>
+	<div id="tabs-2" class="tabs">		
+		<h1>Ceremony</h1>
+		<h2>4:00 PM, The Congregational Church of Plainville</h2>
 		<br/>
 		<h1>Reception</h1>
-		<h2>7:00 PM, St. Clemente Castle, Portland, CT</h2>
-	-->
+		<h2>7:00 PM, Saint Clements Castle, Portland, CT</h2>
+		<img src="images\stclements.jpg"></img>
+
 	</div>
-	<div id="tabs-3">Come back after the Wedding to see the Photos!</div>
-	<div id="tabs-4">
+	<div id="tabs-3" class="tabs">
+		<h1>Hotel</h1>
+		<h2>Courtyard Marriot Hartford Cromwell<h2>
+		<h3><a target="_blank" href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Astolfi-Guion%20wedding%20%5EBDLHC%60AGWAGWA%7CAGWAGWB%60119%60USD%60false%604%609/16/16%609/18/16%608/17/16&app=resvlink&stop_mobi=yes">Click for details and to book with our wedding rate</a></h3>
+
+	</div>
+	<div id="tabs-4" class="tabs">Come back after the Wedding to see the Photos!</div>
+	<div id="tabs-5" class="tabs">
 		<h1>Registry</h1>
 		<p>Check back to see links to Registry</p>
 	</div>
@@ -122,8 +165,8 @@
 
 		
 	$("#wedding_countdown").countdown("2016/09/17", function(event) {
-		$(this).text(event.strftime('%D days %H hours %M minutes %S seconds') + " until the Wedding!");
-8   });
+		$(this).text(event.strftime('%D days %H hours %M minutes %S seconds') + " until the Wedding!");   
+	});
 
 </script>
 </body>
